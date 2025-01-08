@@ -1,6 +1,5 @@
 import requests
 
-# Replace with your GitHub API token
 GITHUB_TOKEN = "your_personal_access_token"
 GITHUB_USERNAME = "your_github_username"
 
@@ -9,7 +8,6 @@ BASE_URL = "https://api.github.com"
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 def get_following(username):
-    """Fetch users you are following."""
     url = f"{BASE_URL}/users/{username}/following"
     following = []
     while url:
@@ -20,7 +18,6 @@ def get_following(username):
     return following
 
 def get_followers(username):
-    """Fetch users following you."""
     url = f"{BASE_URL}/users/{username}/followers"
     followers = []
     while url:
@@ -31,7 +28,6 @@ def get_followers(username):
     return followers
 
 def find_non_followers():
-    """Find users you follow but who do not follow you back."""
     print("Fetching data...")
     following = set(get_following(GITHUB_USERNAME))
     followers = set(get_followers(GITHUB_USERNAME))
