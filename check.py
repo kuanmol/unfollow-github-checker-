@@ -32,7 +32,6 @@ def find_non_followers():
     following = set(get_following(un))
     followers = set(get_followers(un))
     not_following_back = following - followers
-    print("\nUsers not following you back:")
     for user in not_following_back:
         print(user)
 
