@@ -1,11 +1,11 @@
 import requests
 
-GITHUB_TOKEN = "your_personal_access_token"
-GITHUB_USERNAME = "your_github_username"
+token = "put token here"
+un = "github username here"
 
 # GitHub API URLs
 BASE_URL = "https://api.github.com"
-HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
+HEADERS = {"Authorization": f"token {token}"}
 
 def get_following(username):
     url = f"{BASE_URL}/users/{username}/following"
@@ -29,8 +29,8 @@ def get_followers(username):
 
 def find_non_followers():
     print("Fetching data...")
-    following = set(get_following(GITHUB_USERNAME))
-    followers = set(get_followers(GITHUB_USERNAME))
+    following = set(get_following(un))
+    followers = set(get_followers(un))
     not_following_back = following - followers
     print("\nUsers not following you back:")
     for user in not_following_back:
