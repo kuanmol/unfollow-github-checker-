@@ -3,7 +3,6 @@ import requests
 token = "put token here"
 un = "github username here"
 
-# GitHub API URLs
 BASE_URL = "https://api.github.com"
 HEADERS = {"Authorization": f"token {token}"}
 
